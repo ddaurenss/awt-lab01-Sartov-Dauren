@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "BookHouse | Curated Book Catalog",
@@ -13,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className="min-h-screen bg-slate-50/50 text-zinc-900 flex flex-col antialiased selection:bg-red-500 selection:text-white">
         <header className="sticky top-0 z-50 border-b border-red-100 bg-white/90 backdrop-blur-md shadow-xs">
           <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
