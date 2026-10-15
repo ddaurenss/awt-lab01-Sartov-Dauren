@@ -17,7 +17,7 @@ function Card({
       {...props}
     />
   )
-}
+} 
 
 function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
@@ -100,3 +100,4 @@ export {
   CardDescription,
   CardContent,
 }
+
