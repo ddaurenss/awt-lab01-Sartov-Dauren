@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className="min-h-screen bg-slate-50/50 text-zinc-900 flex flex-col antialiased selection:bg-red-500 selection:text-white">
         <header className="sticky top-0 z-50 border-b border-red-100 bg-white/90 backdrop-blur-md shadow-xs">
-          <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          <nav className="max-w-6xl mx-auto px-4 sm:px-6 min-h-16 py-2 flex flex-wrap items-center justify-between gap-2">
             <Link href="/" className="flex items-center gap-2.5 group">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-600 text-white font-black text-sm shadow-sm group-hover:scale-105 transition-transform">
                 B
@@ -29,14 +29,14 @@ export default function RootLayout({
                 Book<span className="text-red-600">House</span>
               </span>
             </Link>
-            <div className="flex gap-8 text-sm font-semibold tracking-wide">
-              <Link href="/" className="text-zinc-600 hover:text-red-600 transition-colors">
+            <div className="flex gap-1 sm:gap-2 text-sm font-semibold tracking-wide">
+              <Link href="/" className="inline-flex items-center rounded-md px-3 py-2 text-zinc-600 hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-red-600 transition-colors">
                 Home
               </Link>
-              <Link href="/courses" className="text-zinc-600 hover:text-red-600 transition-colors">
+              <Link href="/courses" className="inline-flex items-center rounded-md px-3 py-2 text-zinc-600 hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-red-600 transition-colors">
                 Books
               </Link>
-              <Link href="/about" className="text-zinc-600 hover:text-red-600 transition-colors">
+              <Link href="/about" className="inline-flex items-center rounded-md px-3 py-2 text-zinc-600 hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-red-600 transition-colors">
                 About
               </Link>
             </div>

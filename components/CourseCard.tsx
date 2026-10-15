@@ -2,16 +2,16 @@ import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-export type CourseCardProps = {
+export type CourseCardProps = { // Card, CardHeader, CardTitle, CardContent и Button вместо Див 
   id: string;
   title: string;
   description: string;
   credits: number;
   likes: number;
 };
-
+// Добавлен ховер-эффект через
 export default function CourseCard({
-  id,
+  id, 
   title,
   description,
   credits,
@@ -19,7 +19,7 @@ export default function CourseCard({
 }: CourseCardProps) {
   return (
     <Link href={`/courses/${id}`} className="block h-full">
-      <Card className="h-full flex flex-col justify-between hover:shadow-md hover:border-red-300 transition duration-200">
+      <Card className="h-full flex flex-col justify-between border border-border ring-0 hover:shadow-md hover:border-red-300 transition duration-200">
         <CardHeader>
           <CardTitle className="text-lg font-bold leading-snug">
             {title}

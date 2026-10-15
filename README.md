@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BookHouse — Course Catalog
 
-## Getting Started
+Next.js App Router and TypeScript project, adapted into a book catalog. The frontend uses local data from `lib/courses.ts`; the FastAPI backend is a separate Lab 4 project.
 
-First, run the development server:
+## Run locally
+
+Install Node.js LTS, then run inside `course-catalog`:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. The catalog is at `/courses`, book details at `/courses/{id}`, and project information at `/about`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Lab 2 — Tailwind CSS and shadcn/ui
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Configured Tailwind CSS and shadcn/ui (`components.json`).
+- Rebuilt `CourseCard` with `Card`, `CardHeader`, `CardTitle`, `CardContent`, and `Button` (`variant="ghost"`, `size="sm"`).
+- Kept `CourseCard` as a Server Component, without `"use client"`.
+- Added a responsive catalog grid: one column below 640px, two from 640px, three from 1024px.
+- Added visible card border and shadow effects on hover.
+- Styled navigation with spacing, padded links, hover and keyboard focus states, and separation from page content. Navigation wraps when space is limited.
+- Global styles and theme variables are in `app/globals.css`; component styles use Tailwind classes.
 
-## Learn More
+## Verification
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For manual responsive verification, open `/courses` in browser DevTools device mode. Check widths 375px, 800px, and 1280px: expect 1, 2, and 3 columns, respectively, with no horizontal overflow. Check 640px too: two columns should appear. Hover over a card to see its shadow and red border, then open it to check navigation.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The detail-page like button uses client-side React state. Its count resets on reload; no database persistence or newsletter subscription service is implemented.
