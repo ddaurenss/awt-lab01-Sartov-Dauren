@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
-import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
 
 export const metadata: Metadata = {
   title: "BookHouse | Curated Book Catalog",
   description: "Advanced Web Technologies Semester Project",
 };
+
 
 export default function RootLayout({
   children,
@@ -17,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en" className="font-sans">
       <body className="min-h-screen bg-slate-50/50 text-zinc-900 flex flex-col antialiased selection:bg-red-500 selection:text-white">
         <header className="sticky top-0 z-50 border-b border-red-100 bg-white/90 backdrop-blur-md shadow-xs">
           <nav className="max-w-6xl mx-auto px-4 sm:px-6 min-h-16 py-2 flex flex-wrap items-center justify-between gap-2">
@@ -34,8 +33,9 @@ export default function RootLayout({
                 Home
               </Link>
               <Link href="/courses" className="inline-flex items-center rounded-md px-3 py-2 text-zinc-600 hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-red-600 transition-colors">
-                Books
+                Courses
               </Link>
+              <Link href="/filter" className="rounded-md px-3 py-2 hover:bg-red-50">Filter</Link>
               <Link href="/about" className="inline-flex items-center rounded-md px-3 py-2 text-zinc-600 hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-red-600 transition-colors">
                 About
               </Link>
