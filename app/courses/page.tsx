@@ -8,13 +8,13 @@ export default async function CoursesPage() {
     <div className="space-y-8">
       <div className="space-y-2">
         <span className="inline-block text-xs uppercase tracking-widest font-bold text-red-600 bg-red-50 border border-red-200 px-3 py-1 rounded-full">
-          Featured Collection
+          Available courses
         </span>
         <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900">
-          Book Catalog
+          Course Catalog
         </h1>
         <p className="text-zinc-600">
-          Explore timeless fiction, sci-fi classics, and essential software engineering reads.
+          Six courses from FastAPI, sorted by popularity.
         </p>
       </div>
 

@@ -20,7 +20,7 @@ export default function CourseCard({
   return (
     <Link href={`/courses/${id}`} className="block h-full">
       <Card className="h-full flex flex-col justify-between border border-border ring-0 hover:shadow-md hover:border-red-300 transition duration-200">
-        <CardHeader>
+        <CardHeader> 
           <CardTitle className="text-lg font-bold leading-snug">
             {title}
           </CardTitle>
@@ -30,7 +30,7 @@ export default function CourseCard({
             {description}
           </p>
           <div className="flex items-center justify-between pt-2 border-t border-border">
-            <span className="text-sm font-semibold">${credits}</span>
+            <span className="text-sm font-semibold">{credits} credits</span>
             <Button variant="ghost" size="sm" className="pointer-events-none text-xs">
               ❤️ {likes}
             </Button>
